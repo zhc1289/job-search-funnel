@@ -15,4 +15,8 @@ indeedFile.close()
 soup = BeautifulSoup(indeedHtml, "html.parser")
 
 for item in soup.find_all('div', attrs={'class':'title'}):
-    print(soup.find('a').get('href') )
+    domain = 'https://www.indeed.com'
+    link = item.find("a").get("href")
+    link = domain + link
+    print(item.text)
+    print(link)

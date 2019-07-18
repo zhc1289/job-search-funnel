@@ -1,7 +1,7 @@
 # job-search-funnel
 --wip--
 
-I desired for a way to weed out most of the monotomy that comes with the job hunting process.  This project aims to search for relevant opportunities and group those based on my skills.  Will add more automation as time goes.
+The job hunting process is tedious and repetitive.  This project will filter out all the jobs which don't fit our requirements and automate the application process.
 
 
 -- to activate environment --

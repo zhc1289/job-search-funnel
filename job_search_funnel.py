@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 from urllib.request import urlopen
 from webbrowser import open_new_tab
 from shutil import copyfileobj
-from pyautogui import typewrite, time, hotkey, PAUSE, FAILSAFE
+from pyautogui import typewrite, time, hotkey, PAUSE, FAILSAFE, moveTo, pixelMatchesColor, click, press, screenshot
 import csv, time
 
 # to activate environment
@@ -62,8 +62,21 @@ while count < 19:
             with urlopen(link) as response, open('/home/zhi/Desktop/job_search_funnel/tester.txt', 'wb') as out_file:
                 copyfileobj(response, out_file)
                 open_new_tab(link)
-                time.sleep(2)
-                hotkey('ctrl', 'w')
+                time.sleep(5)
+                press('pgdn')
+                moveTo(450, 235, duration=2)
+                if pixelMatchesColor(450, 235, (255,108,64)):   
+                    print("ORANGE")
+                    click()
+                    time.sleep(4)
+                    press('pgdn')
+                    time.sleep(2)
+                    moveTo(480, 415, duration=2)
+                    if pixelMatchesColor(480, 415, (20, 151, 255)):
+                        print("blue")
+                        click()
+
+                break
 
             f.writerow([item.text, link])
             jobNumber += 1       
